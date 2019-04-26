@@ -39,8 +39,11 @@ public class App
     	e.setFormation(f);
     	System.out.println(e);
     	
+    	Iservice service2 = context.getBean("service2", ServiceImpl.class); 
     	Iservice service = context.getBean("service", ServiceImpl.class); 
     	
+    	service2.ajouterDev(d);
+    	service2.ajouterDevLogiciel(dl);
     	service.ajouterFormation(f);	
     	service.ajouterEtudiant(e);
     	

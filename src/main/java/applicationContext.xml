@@ -22,14 +22,16 @@
 <property name="chefDeveloppeur" ref="d"/>
 </bean>
 
+<bean id="service2" class="com.infotel.TpMavenSpringDev.service.ServiceImpl">
+	<property name="dao" ref="dao"></property>
+</bean>
+<bean id="dao" class="com.infotel.TpMavenSpringDev.dao.DaoImpl"/>
+
+
 <bean id="f" class="com.infotel.TpMavenSpringDev.metier.Formation"/>
 
 <bean id="e" class="com.infotel.TpMavenSpringDev.metier.Etudiant"/>
 
-<bean id="service" class="com.infotel.TpMavenSpringDev.service.ServiceImpl">
-	<property name="dao" ref="dao"></property>
-</bean>
-<bean id="dao" class="com.infotel.TpMavenSpringDev.dao.DaoImpl"/>
 
 
 
