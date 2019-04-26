@@ -21,31 +21,31 @@ public class App
    
     	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
     	
-    	Dev d = context.getBean("d", Dev.class);
-    	System.out.println(d);
-
-    	DevLogiciel dl = context.getBean("dl", DevLogiciel.class);
-    	System.out.println(dl); 
-    	
-    	Formation f = context.getBean("f", Formation.class);
+    	Formation f = context.getBean("formation", Formation.class);
     	f.setIdFormation(1);
     	f.setNomFormation("Java");
     	System.out.println(f);
     	
-    	Etudiant e = context.getBean("e", Etudiant.class);
+    	Etudiant e = context.getBean("etudiant", Etudiant.class);
     	e.setId(1);
     	e.setNom("Jane");
     	e.setPrenom("Mary");
     	e.setFormation(f);
     	System.out.println(e);
     	
-    	Iservice service2 = context.getBean("service2", ServiceImpl.class); 
+ 
     	Iservice service = context.getBean("service", ServiceImpl.class); 
-    	
-    	service2.ajouterDev(d);
-    	service2.ajouterDevLogiciel(dl);
+    	 	
     	service.ajouterFormation(f);	
     	service.ajouterEtudiant(e);
+    	
+    	Dev d = context.getBean("d", Dev.class);
+    	System.out.println(d);
+
+    	DevLogiciel dl = context.getBean("dl", DevLogiciel.class);
+    	System.out.println(dl); 
+    	
+    	
     	
     	context.close();
     }
